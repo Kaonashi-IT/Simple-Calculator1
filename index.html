@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator + Equations</title>
+</head>
+<body>
+    <!-- КНОПКА ТЕМЫ -->
+    <button id="themeToggle" class="theme-btn">🌙</button>
+
+    <div class="main-container">
+        <!-- ЛЕВАЯ КОЛОНКА -->
+        <div class="left-column">
+            <!-- КАЛЬКУЛЯТОР -->
+            <div class="calculator">
+                <input type="text" id="op" placeholder="0" readonly>
+                <div class="buttons">
+                    <button onclick="Clear()">Clr</button>
+                    <button onclick="del()">Del</button>
+                    <button onclick="display('%')">%</button>
+                    <button onclick="display('/')">/</button>
+                    <button onclick="display('7')">7</button>
+                    <button onclick="display('8')">8</button>
+                    <button onclick="display('9')">9</button>
+                    <button onclick="display('*')">*</button>
+                    <button onclick="display('4')">4</button>
+                    <button onclick="display('5')">5</button>
+                    <button onclick="display('6')">6</button>
+                    <button onclick="display('-')">-</button>
+                    <button onclick="display('1')">1</button>
+                    <button onclick="display('2')">2</button>
+                    <button onclick="display('3')">3</button>
+                    <button onclick="display('+')">+</button>
+                    <button onclick="display('.')">.</button>
+                    <button onclick="display('0')">0</button>
+                    <button onclick="Calculate()" class="equal">=</button>
+                </div>
+            </div>
+
+            <!-- ИСТОРИЯ -->
+            <div class="history-panel">
+                <h3>История</h3>
+                <div id="historyList"></div>
+                <button id="clearHistoryBtn" class="history-clear">Очистить историю</button>
+            </div>
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА -->
+        <div class="right-column">
+            <div class="equation-panel">
+                <h3>Решение линейных уравнений</h3>
+                <div class="equation-input-group">
+                    <input type="text" id="equationInput" placeholder="Например: 2x + 3 = 7">
+                    <button id="solveEqBtn" class="solve-btn">Решить</button>
+                </div>
+                <div id="eqResult" class="solution-result"></div>
+
+                <hr>
+
+                <h3>Квадратные уравнения (ax² + bx + c = 0)</h3>
+                <div class="quadratic-inputs">
+                    <div class="input-group">
+                        <span class="label">a =</span>
+                        <input type="text" id="aCoeff" class="small-input" value="1">
+                    </div>
+                    <div class="input-group">
+                        <span class="label">b =</span>
+                        <input type="text" id="bCoeff" class="small-input" value="0">
+                    </div>
+                    <div class="input-group">
+                        <span class="label">c =</span>
+                        <input type="text" id="cCoeff" class="small-input" value="0">
+                    </div>
+                </div>
+                <div class="quadratic-buttons">
+                    <button id="calcDiscrBtn" class="solve-btn">Дискриминант</button>
+                    <button id="calcVietBtn" class="solve-btn">Теорема Виета</button>
+                </div>
+                <div id="quadraticResult" class="solution-result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
